@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@500&display=swap");
+
+@font-face {
+  font-family: "Boom Shake";
+  src: url(../fonts/Boom-Shake-34140805/Boom\ Shake.otf);
+}
+
+@font-face {
+  font-family: "Timer Font";
+  src: url(../fonts/digital-7.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #fdd500;
+  --space: 1rem;
+  --b-raduis: 8px;
+  --b-shadow: rgba(0, 0, 0, 0.5) 0px 3px 9px;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: url(../images/background\ block.png),
+    url(../images/game.png) center center / cover no-repeat;
+  overflow-x: hidden;
+}
+
+.timer {
+  width: 100px;
+  padding-block: 0.5rem;
+  background: url(../images/wrapper\ settings.png) center center / cover
+    no-repeat;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  right: -100px;
+  top: 100px;
+  color: var(--primary-color);
+  font-size: 4rem;
+  font-family: "Timer Font";
+  transition: right 500ms linear;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px;
+}
+
+.popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.popup .message {
+  color: var(--primary-color);
+  background: url(../images/wrapper\ settings.png) center center / cover
+    no-repeat;
+  padding: 2rem;
+  font-size: 1.2rem;
+  border-radius: var(--b-raduis);
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px;
+  position: relative;
+}
+
+.popup .msg i {
+  position: absolute;
+  right: -5px;
+  top: -5px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.popup-content {
+  background: url(../images/wrapper\ settings.png) center center / cover
+    no-repeat;
+  border-radius: 20px;
+  padding: 2rem var(--space);
+  max-width: 450px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px;
+}
+
+.popup-content h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-block-end: 1.5rem;
+}
+
+.popup-content .title {
+  font-family: "Boom Shake";
+  font-size: 2.5rem;
+}
+
+.popup-content h2 span {
+  color: white;
+}
+
+.popup-content label {
+  color: rgb(66, 66, 66);
+  margin-block-end: 1rem;
+  display: inline-block;
+}
+
+.popup-content select {
+  width: 100%;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: var(--b-raduis);
+  padding: var(--space);
+  cursor: pointer;
+  font: inherit;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 3px 6px;
+}
+
+.popup-content select:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.popup-content option {
+  color: black;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.score-popup .msg {
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.popup-content button {
+  margin-block-start: 2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.navbar {
+  background: url(../images/wrapper\ settings.png) center center / cover
+    no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 3px 10px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.navbar .logo {
+  width: 85px;
+}
+
+.navbar div:first-of-type {
+  max-width: 500px;
+  flex-grow: 1;
+  position: relative;
+}
+
+.navbar input[type="search"] {
+  background-color: transparent;
+  padding: 0.75rem 1.25rem;
+  outline: 0;
+  border: none;
+  border-radius: 100vmax;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 2px 5px;
+  width: 100%;
+  font-size: 1rem;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+.navbar input[type="search"]::placeholder {
+  color: gray;
+}
+
+.navbar input[type="search"]:focus::placeholder {
+  opacity: 0;
+}
+
+.navbar div:first-of-type i {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  opacity: 0.6;
+}
+
+.navbar div:last-of-type {
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s linear;
+  white-space: nowrap;
+}
+
+.navbar div:hover {
+  color: var(--primary-color);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 3rem auto 0;
+}
+
+.container .title {
+  font-family: "Boom Shake";
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-block-end: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .container .title {
+    font-size: 3rem;
+  }
+}
+
+.container .title span {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--primary-color);
+}
+
+.game-container {
+  background: url(../images/wrapper\ settings.png) center center / cover
+    no-repeat;
+  padding: var(--space);
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  border-radius: var(--b-raduis);
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 8px 24px;
+}
+
+.game-container :is(.source-lang, .target-lang) {
+  width: 100%;
+}
+
+.game-container .lang {
+  text-align: center;
+  margin-block-end: var(--space);
+}
+
+.game-container .dropdown {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: var(--b-raduis);
+  width: 100%;
+  box-shadow: var(--b-shadow);
+  padding: 0.75rem var(--space);
+  cursor: pointer;
+  font: inherit;
+}
+
+.game-container .dropdown option {
+  color: black;
+}
+
+.game-container .content {
+  position: relative;
+}
+
+.game-container textarea {
+  resize: none;
+  min-height: 250px;
+  border: none;
+  outline: 0;
+  background-color: transparent;
+  box-shadow: var(--b-shadow);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--b-raduis);
+  font-size: 1.2rem;
+  width: 100%;
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+
+.game-container textarea::placeholder {
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.game-container textarea:focus::placeholder {
+  opacity: 0;
+}
+
+.game-container .content .volume {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  color: gray;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: color 0.2s ease-in;
+}
+
+.game-container .content .volume:hover {
+  color: var(--primary-color);
+}
+
+.buttons {
+  margin-block: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 300px);
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    grid-template-columns: 100%;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  color: #1e1700;
+  outline: none;
+  border: none;
+  background-color: var(--primary-color);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px, hsl(50, 100%, 50%) 3.5px 3.5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: hsl(51, 100%, 45%);
+}
+
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  margin-block-start: 1rem;
+}
+
+.games-container div {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 2px 4px;
+}
+
+.games-container div::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.2s ease-out;
+}
+
+.games-container div:hover::before {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.games-container img {
+  max-width: 100%;
+  border-radius: calc(var(--b-raduis) / 2);
+  display: block;
+}

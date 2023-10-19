@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Translation Game</title>
+  </head>
+  <body>
+    <div id="timer" class="timer"></div>
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <h2 class="title">Translation Game</h2>
+        <label for="sourceLanguage">Select your source language :</label>
+        <select id="sourceLanguage">
+          <option value="spanish">Spanish</option>
+          <option value="german">German</option>
+          <option value="english">English</option>
+          <option value="chinese">Chinese</option>
+        </select>
+        <label for="targetLanguage">Select your target language :</label>
+        <select id="targetLanguage">
+          <option value="english">English</option>
+          <option value="german">German</option>
+          <option value="chinese">Chinese</option>
+          <option value="spanish">Spanish</option>
+        </select>
+        <button id="startButton" class="btn">Start</button>
+      </div>
+    </div>
+    <nav class="navbar">
+      <img class="logo" src="images/logo.svg" alt="" />
+      <div>
+        <input type="search" placeholder="Search for a game.." />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div>
+        <i class="fa-regular fa-heart"></i>
+        My games
+      </div>
+    </nav>
+    <div class="container">
+      <div class="title"><span>Translation</span>Game</div>
+      <div class="game-container">
+        <div class="source-lang">
+          <div class="lang">
+            <div class="dropdown source_lang_label">French</div>
+          </div>
+          <div class="content">
+            <textarea
+              id="source-input"
+              class="source-input"
+              readonly
+            ></textarea>
+            <i class="fa-solid fa-volume-high volume volume_source_lang"></i>
+          </div>
+        </div>
+        <div class="target-lang">
+          <div class="lang">
+            <div class="dropdown target_lang_label">English</div>
+          </div>
+          <div class="content">
+            <textarea
+              id="target-input"
+              class="target-input"
+              placeholder="Enter your translation"
+            ></textarea>
+            <i class="fa-solid fa-volume-high volume volume_target_lang"></i>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="correctTrans" class="btn">Correct Translation</button>
+        <button id="nextQuestion" class="btn">Next Question</button>
+        <button id="restartGame" class="btn">Restart the Game</button>
+        <button id="btnScore" class="btn">See your Score</button>
+      </div>
+    </div>
+    <div class="popup score-popup hidden">
+      <div class="popup-content">
+        <h2 style="text-transform: uppercase; margin-bottom: 1rem">
+          Your score <br />
+          <span id="score" style="margin-top: 0.5rem; display: inline-block"
+            >0</span
+          >
+        </h2>
+        <div class="msg"></div>
+        <button id="play-again" class="btn">Play Again</button>
+      </div>
+    </div>
+    <div class="popup api-popup hidden">
+      <div class="message">
+        Your Browser does not support Web Speech API
+        <i class="fa-solid fa-circle-xmark close-icon"></i>
+      </div>
+    </div>
+    <audio id="start_game_sound" src="audio/start_the_game.mp3"></audio>
+    <audio id="correct_sound" src="audio/correct_answer.mp3"></audio>
+    <audio id="success_sound" src="audio/success.mp3"></audio>
+    <audio id="wrong_sound" src="audio/wrong_answer.mp3"></audio>
+    <audio id="failure_sound" src="audio/failure.mp3"></audio>
+    <script src="js/script.js"></script>
+  </body>
+</html>
