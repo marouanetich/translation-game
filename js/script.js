@@ -101,7 +101,7 @@ function checkTranslation() {
       const translation = data.responseData.translatedText;
       console.log(translation);
       if (
-        targetInput.value.toLowerCase().trim() === translation.toLowerCase()
+        targetInput.value.toLowerCase().trim() === translation.toLowerCase().replace('!', '')
       ) {
         correctSound.play();
         displayNextQuestion();
